@@ -55,31 +55,38 @@
 - (void)addChildVC {
     
     // 精华
-    [self addChildVC:[[WSEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selImage:@"tabBar_essence_click_icon"];
+    WSNavigationController *nav1 = [self addChildVC:[[WSEssenceViewController alloc] init] title:@"精华" image:@"tabBar_essence_icon" selImage:@"tabBar_essence_click_icon"];
+    [self addChildViewController:nav1];
     
     // 新帖
-    [self addChildVC:[[WSNewViewController alloc] init] title:@"新帖" image:@"tabBar_new_icon" selImage:@"tabBar_new_click_icon"];
+    WSNavigationController *nav2 = [self addChildVC:[[WSNewViewController alloc] init] title:@"新帖" image:@"tabBar_new_icon" selImage:@"tabBar_new_click_icon"];
+    [self addChildViewController:nav2];
     
     // 发布
     
     
     // 关注
-    [self addChildVC:[[WSFriendTrendViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selImage:@"tabBar_friendTrends_click_icon"];
+    WSNavigationController *nav3 = [self addChildVC:[[WSFriendTrendViewController alloc] init] title:@"关注" image:@"tabBar_friendTrends_icon" selImage:@"tabBar_friendTrends_click_icon"];
+    [self addChildViewController:nav3];
     
     // 我
-    [self addChildVC:[[WSMineViewController alloc] init] title:@"我" image:@"tabBar_me_icon" selImage:@"tabBar_me_click_icon"];
+    UIStoryboard *mineStoryboard = [UIStoryboard storyboardWithName:@"mine" bundle:nil];
+    WSMineViewController *mineVC = mineStoryboard.instantiateInitialViewController;
+    WSNavigationController *nav4 = [self addChildVC:mineVC title:@"我" image:@"tabBar_me_icon" selImage:@"tabBar_me_click_icon"];
+    [self addChildViewController:nav4];
     
     
     
 }
 
-- (void)addChildVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)imageName selImage:(NSString *)selImageName {
+- (WSNavigationController *)addChildVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)imageName selImage:(NSString *)selImageName {
     
     WSNavigationController *nav = [[WSNavigationController alloc] initWithRootViewController:vc];
     nav.tabBarItem.title = title;
     nav.tabBarItem.image = [UIImage imageNamed:imageName];
     nav.tabBarItem.selectedImage = [[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [self addChildViewController:nav];
+    
+    return nav;
     
 }
 

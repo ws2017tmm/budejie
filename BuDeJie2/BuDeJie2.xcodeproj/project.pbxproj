@@ -21,6 +21,10 @@
 		640EDC59218A9B2B00A217F5 /* WSRegisterLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC58218A9B2B00A217F5 /* WSRegisterLoginView.xib */; };
 		640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC5B218ACF2E00A217F5 /* WSLoginTextField.m */; };
 		640EDC5F218AD1DF00A217F5 /* UITextField+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */; };
+		640EDC61218AE22D00A217F5 /* mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC60218AE22D00A217F5 /* mine.storyboard */; };
+		640EDC65218AEB6600A217F5 /* WSSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC63218AEB6600A217F5 /* WSSquareCell.m */; };
+		640EDC66218AEB6600A217F5 /* WSSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC64218AEB6600A217F5 /* WSSquareCell.xib */; };
+		640EDC69218AEDA000A217F5 /* WSSquareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC68218AEDA000A217F5 /* WSSquareItem.m */; };
 		641A9E1621893790009E0ECE /* WSADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1421893790009E0ECE /* WSADViewController.xib */; };
 		641A9E2021895D09009E0ECE /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1921895D09009E0ECE /* LaunchImage@2x.png */; };
 		641A9E2121895D09009E0ECE /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1A21895D09009E0ECE /* LaunchImage-568h@2x.png */; };
@@ -73,6 +77,12 @@
 		640EDC5B218ACF2E00A217F5 /* WSLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSLoginTextField.m; sourceTree = "<group>"; };
 		640EDC5D218AD1DF00A217F5 /* UITextField+placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+placeholder.h"; sourceTree = "<group>"; };
 		640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+placeholder.m"; sourceTree = "<group>"; };
+		640EDC60218AE22D00A217F5 /* mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = mine.storyboard; sourceTree = "<group>"; };
+		640EDC62218AEB6600A217F5 /* WSSquareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSquareCell.h; sourceTree = "<group>"; };
+		640EDC63218AEB6600A217F5 /* WSSquareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSSquareCell.m; sourceTree = "<group>"; };
+		640EDC64218AEB6600A217F5 /* WSSquareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSSquareCell.xib; sourceTree = "<group>"; };
+		640EDC67218AEDA000A217F5 /* WSSquareItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSquareItem.h; sourceTree = "<group>"; };
+		640EDC68218AEDA000A217F5 /* WSSquareItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSSquareItem.m; sourceTree = "<group>"; };
 		641A9E1221893790009E0ECE /* WSADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSADViewController.h; sourceTree = "<group>"; };
 		641A9E1321893790009E0ECE /* WSADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSADViewController.m; sourceTree = "<group>"; };
 		641A9E1421893790009E0ECE /* WSADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSADViewController.xib; sourceTree = "<group>"; };
@@ -411,6 +421,7 @@
 			children = (
 				84AC1965217B815D00A522C2 /* WSMineViewController.h */,
 				84AC1966217B815D00A522C2 /* WSMineViewController.m */,
+				640EDC60218AE22D00A217F5 /* mine.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -418,6 +429,8 @@
 		84AC194B217B7B6500A522C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				640EDC67218AEDA000A217F5 /* WSSquareItem.h */,
+				640EDC68218AEDA000A217F5 /* WSSquareItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,6 +438,9 @@
 		84AC194C217B7B6500A522C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				640EDC62218AEB6600A217F5 /* WSSquareCell.h */,
+				640EDC63218AEB6600A217F5 /* WSSquareCell.m */,
+				640EDC64218AEB6600A217F5 /* WSSquareCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,6 +655,7 @@
 				641A9E2221895D09009E0ECE /* LaunchImage-800-667h@2x.png in Resources */,
 				640EDC4F2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib in Resources */,
 				640EDC4A21899FCB00A217F5 /* WSSubTagCell.xib in Resources */,
+				640EDC61218AE22D00A217F5 /* mine.storyboard in Resources */,
 				84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */,
 				641A9E2621895D09009E0ECE /* LaunchImage.png in Resources */,
 				641A9E2521895D09009E0ECE /* LaunchImage-700-568h@2x.png in Resources */,
@@ -647,6 +664,7 @@
 				641A9E2321895D09009E0ECE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				641A9E2421895D09009E0ECE /* LaunchImage-700@2x.png in Resources */,
 				640EDC59218A9B2B00A217F5 /* WSRegisterLoginView.xib in Resources */,
+				640EDC66218AEB6600A217F5 /* WSSquareCell.xib in Resources */,
 				641A9E1621893790009E0ECE /* WSADViewController.xib in Resources */,
 				640EDC54218A8AC600A217F5 /* WSLoginRegisterViewController.xib in Resources */,
 			);
@@ -722,10 +740,12 @@
 				84AC196A217B817600A522C2 /* WSPublishViewController.m in Sources */,
 				641A9E30218977E5009E0ECE /* AFHTTPSessionManager+manager.m in Sources */,
 				84AC1961217B812C00A522C2 /* WSNewViewController.m in Sources */,
+				640EDC69218AEDA000A217F5 /* WSSquareItem.m in Sources */,
 				640EDC3E2189993100A217F5 /* WSSubTagViewController.m in Sources */,
 				84AC195E217B810D00A522C2 /* WSEssenceViewController.m in Sources */,
 				84AC1984217F6F4300A522C2 /* WSBackView.m in Sources */,
 				84AC1987217F6F5A00A522C2 /* WSNavigationBar.m in Sources */,
+				640EDC65218AEB6600A217F5 /* WSSquareCell.m in Sources */,
 				640EDC5F218AD1DF00A217F5 /* UITextField+placeholder.m in Sources */,
 				84AC196D217F492D00A522C2 /* WSNavigationController.m in Sources */,
 				640EDC4521899DCC00A217F5 /* WSSubTagItem.m in Sources */,

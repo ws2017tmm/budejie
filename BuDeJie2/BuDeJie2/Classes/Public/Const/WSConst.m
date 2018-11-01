@@ -10,3 +10,7 @@
 
 /** 统一的一个请求路径 */
 NSString  * const WSCommonURL = @"http://api.budejie.com/api/api_open.php";
+
+
+/** 全局统一的间距 */
+CGFloat const WSMarin = 10;
