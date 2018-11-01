@@ -30,7 +30,12 @@
 - (void)setSubTagItem:(WSSubTagItem *)subTagItem {
     _subTagItem = subTagItem;
     
-    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:subTagItem.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    NSLog(@"%.2f",_iconImageView.ws_height);
+//    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:subTagItem.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:subTagItem.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        self.iconImageView.layer.cornerRadius = self.iconImageView.ws_height * 0.5;
+        self.iconImageView.layer.masksToBounds = YES;
+    }];
     // 设置内容
     _titleLabel.text = subTagItem.theme_name;
     // 判断下有没有>10000
@@ -60,14 +65,13 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.iconImageView.layer.cornerRadius = self.iconImageView.ws_width * 0.5;
-    self.iconImageView.layer.masksToBounds = YES;
+//    self.iconImageView.layer.cornerRadius = self.iconImageView.ws_width * 0.5;
+//    self.iconImageView.layer.masksToBounds = YES;
     
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

@@ -13,6 +13,14 @@
 		640EDC4521899DCC00A217F5 /* WSSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC4421899DCC00A217F5 /* WSSubTagItem.m */; };
 		640EDC4921899FCA00A217F5 /* WSSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC4721899FCA00A217F5 /* WSSubTagCell.m */; };
 		640EDC4A21899FCB00A217F5 /* WSSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC4821899FCA00A217F5 /* WSSubTagCell.xib */; };
+		640EDC4D2189B37400A217F5 /* WSFriendTrendNoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC4C2189B37400A217F5 /* WSFriendTrendNoLoginView.m */; };
+		640EDC4F2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC4E2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib */; };
+		640EDC53218A8AC600A217F5 /* WSLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC51218A8AC600A217F5 /* WSLoginRegisterViewController.m */; };
+		640EDC54218A8AC600A217F5 /* WSLoginRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC52218A8AC600A217F5 /* WSLoginRegisterViewController.xib */; };
+		640EDC57218A9B1D00A217F5 /* WSRegisterLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC56218A9B1D00A217F5 /* WSRegisterLoginView.m */; };
+		640EDC59218A9B2B00A217F5 /* WSRegisterLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640EDC58218A9B2B00A217F5 /* WSRegisterLoginView.xib */; };
+		640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC5B218ACF2E00A217F5 /* WSLoginTextField.m */; };
+		640EDC5F218AD1DF00A217F5 /* UITextField+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */; };
 		641A9E1621893790009E0ECE /* WSADViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1421893790009E0ECE /* WSADViewController.xib */; };
 		641A9E2021895D09009E0ECE /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1921895D09009E0ECE /* LaunchImage@2x.png */; };
 		641A9E2121895D09009E0ECE /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641A9E1A21895D09009E0ECE /* LaunchImage-568h@2x.png */; };
@@ -52,6 +60,19 @@
 		640EDC4621899FCA00A217F5 /* WSSubTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSubTagCell.h; sourceTree = "<group>"; };
 		640EDC4721899FCA00A217F5 /* WSSubTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSSubTagCell.m; sourceTree = "<group>"; };
 		640EDC4821899FCA00A217F5 /* WSSubTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSSubTagCell.xib; sourceTree = "<group>"; };
+		640EDC4B2189B37400A217F5 /* WSFriendTrendNoLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSFriendTrendNoLoginView.h; sourceTree = "<group>"; };
+		640EDC4C2189B37400A217F5 /* WSFriendTrendNoLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFriendTrendNoLoginView.m; sourceTree = "<group>"; };
+		640EDC4E2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSFriendTrendNoLoginView.xib; sourceTree = "<group>"; };
+		640EDC50218A8AC600A217F5 /* WSLoginRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSLoginRegisterViewController.h; sourceTree = "<group>"; };
+		640EDC51218A8AC600A217F5 /* WSLoginRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSLoginRegisterViewController.m; sourceTree = "<group>"; };
+		640EDC52218A8AC600A217F5 /* WSLoginRegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSLoginRegisterViewController.xib; sourceTree = "<group>"; };
+		640EDC55218A9B1D00A217F5 /* WSRegisterLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRegisterLoginView.h; sourceTree = "<group>"; };
+		640EDC56218A9B1D00A217F5 /* WSRegisterLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRegisterLoginView.m; sourceTree = "<group>"; };
+		640EDC58218A9B2B00A217F5 /* WSRegisterLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSRegisterLoginView.xib; sourceTree = "<group>"; };
+		640EDC5A218ACF2E00A217F5 /* WSLoginTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSLoginTextField.h; sourceTree = "<group>"; };
+		640EDC5B218ACF2E00A217F5 /* WSLoginTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSLoginTextField.m; sourceTree = "<group>"; };
+		640EDC5D218AD1DF00A217F5 /* UITextField+placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+placeholder.h"; sourceTree = "<group>"; };
+		640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+placeholder.m"; sourceTree = "<group>"; };
 		641A9E1221893790009E0ECE /* WSADViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSADViewController.h; sourceTree = "<group>"; };
 		641A9E1321893790009E0ECE /* WSADViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSADViewController.m; sourceTree = "<group>"; };
 		641A9E1421893790009E0ECE /* WSADViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSADViewController.xib; sourceTree = "<group>"; };
@@ -336,6 +357,9 @@
 			children = (
 				84AC1962217B814400A522C2 /* WSFriendTrendViewController.h */,
 				84AC1963217B814400A522C2 /* WSFriendTrendViewController.m */,
+				640EDC50218A8AC600A217F5 /* WSLoginRegisterViewController.h */,
+				640EDC51218A8AC600A217F5 /* WSLoginRegisterViewController.m */,
+				640EDC52218A8AC600A217F5 /* WSLoginRegisterViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -350,6 +374,14 @@
 		84AC1947217B7B6500A522C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				640EDC4B2189B37400A217F5 /* WSFriendTrendNoLoginView.h */,
+				640EDC4C2189B37400A217F5 /* WSFriendTrendNoLoginView.m */,
+				640EDC4E2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib */,
+				640EDC55218A9B1D00A217F5 /* WSRegisterLoginView.h */,
+				640EDC56218A9B1D00A217F5 /* WSRegisterLoginView.m */,
+				640EDC58218A9B2B00A217F5 /* WSRegisterLoginView.xib */,
+				640EDC5A218ACF2E00A217F5 /* WSLoginTextField.h */,
+				640EDC5B218ACF2E00A217F5 /* WSLoginTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,6 +521,8 @@
 				84AC197F217F6AFD00A522C2 /* UIView+Extension.m */,
 				84AC1975217F597D00A522C2 /* UIBarButtonItem+Item.h */,
 				84AC1976217F597D00A522C2 /* UIBarButtonItem+Item.m */,
+				640EDC5D218AD1DF00A217F5 /* UITextField+placeholder.h */,
+				640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -603,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				641A9E2221895D09009E0ECE /* LaunchImage-800-667h@2x.png in Resources */,
+				640EDC4F2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib in Resources */,
 				640EDC4A21899FCB00A217F5 /* WSSubTagCell.xib in Resources */,
 				84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */,
 				641A9E2621895D09009E0ECE /* LaunchImage.png in Resources */,
@@ -611,7 +646,9 @@
 				641A9E2121895D09009E0ECE /* LaunchImage-568h@2x.png in Resources */,
 				641A9E2321895D09009E0ECE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				641A9E2421895D09009E0ECE /* LaunchImage-700@2x.png in Resources */,
+				640EDC59218A9B2B00A217F5 /* WSRegisterLoginView.xib in Resources */,
 				641A9E1621893790009E0ECE /* WSADViewController.xib in Resources */,
+				640EDC54218A8AC600A217F5 /* WSLoginRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,14 +706,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640EDC4D2189B37400A217F5 /* WSFriendTrendNoLoginView.m in Sources */,
 				84AC195B217B803800A522C2 /* WSTabBarController.m in Sources */,
 				84AC197E217F5E5A00A522C2 /* WSSettingViewController.m in Sources */,
 				84AC198D217F7CD600A522C2 /* WSBackButton.m in Sources */,
 				84AC1977217F597D00A522C2 /* UIBarButtonItem+Item.m in Sources */,
 				84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */,
+				640EDC57218A9B1D00A217F5 /* WSRegisterLoginView.m in Sources */,
 				84AC1964217B814400A522C2 /* WSFriendTrendViewController.m in Sources */,
 				84AC1954217B7B6500A522C2 /* main.m in Sources */,
 				642907102189877C00CEDDB3 /* WSADViewController.m in Sources */,
+				640EDC53218A8AC600A217F5 /* WSLoginRegisterViewController.m in Sources */,
+				640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */,
 				84AC1981217F6AFE00A522C2 /* UIView+Extension.m in Sources */,
 				84AC196A217B817600A522C2 /* WSPublishViewController.m in Sources */,
 				641A9E30218977E5009E0ECE /* AFHTTPSessionManager+manager.m in Sources */,
@@ -685,6 +726,7 @@
 				84AC195E217B810D00A522C2 /* WSEssenceViewController.m in Sources */,
 				84AC1984217F6F4300A522C2 /* WSBackView.m in Sources */,
 				84AC1987217F6F5A00A522C2 /* WSNavigationBar.m in Sources */,
+				640EDC5F218AD1DF00A217F5 /* UITextField+placeholder.m in Sources */,
 				84AC196D217F492D00A522C2 /* WSNavigationController.m in Sources */,
 				640EDC4521899DCC00A217F5 /* WSSubTagItem.m in Sources */,
 				640EDC4221899BAD00A217F5 /* WSConst.m in Sources */,

@@ -40,7 +40,6 @@ static NSString * const cellID = @"cellID";
 
 #pragma mark - setupTableView
 - (void)setupTableView {
-    self.tableView.rowHeight = 81;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 220 220 221
     self.tableView.backgroundColor = WSColor(220, 220, 221);
@@ -100,6 +99,9 @@ static NSString * const cellID = @"cellID";
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 81;
+}
 
 /*
 // Override to support conditional editing of the table view.

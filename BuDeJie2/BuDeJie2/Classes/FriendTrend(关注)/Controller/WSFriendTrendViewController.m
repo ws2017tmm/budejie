@@ -7,8 +7,14 @@
 //
 
 #import "WSFriendTrendViewController.h"
+#import "WSFriendTrendNoLoginView.h"
+#import "WSLoginRegisterViewController.h"
+
+#define isUserLogined NO
 
 @interface WSFriendTrendViewController ()
+
+@property (weak, nonatomic) WSFriendTrendNoLoginView *noLoginView;
 
 @end
 
@@ -16,12 +22,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
+//    self.view.backgroundColor = [UIColor greenColor];
     
     // titleView
     self.navigationItem.title = @"我的关注";
     
+    // 判断用户是否登录显示不同的界面
+    [self judgeUserLogin];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    
+    
+    
+}
+
+#pragma mark - 判断用户是否登录
+- (void)judgeUserLogin {
+    if (isUserLogined) { // 已登录
+        if (self.noLoginView) {
+            [self.noLoginView removeFromSuperview];
+        }
+        // 添加登录后的view
+        
+    } else {
+        WSFriendTrendNoLoginView *view = [WSFriendTrendNoLoginView loadFormXib];
+        view.registerLoginBtnClick = ^{
+            WSLoginRegisterViewController *VC = [[WSLoginRegisterViewController alloc] init];
+            [self presentViewController:VC animated:YES completion:nil];
+        };
+        self.noLoginView = view;
+        view.frame = self.view.bounds;
+        [self.view addSubview:view];
+        
+//        NSLog(@"----%@",NSStringFromCGRect(self.view.bounds));
+    }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+//    NSLog(@"----%@",NSStringFromCGRect(self.view.bounds));
     
     
 }

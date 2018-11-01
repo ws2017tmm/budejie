@@ -2,15 +2,12 @@
   "images" : [
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
-          "mode" : "tile",
-          "width" : 1,
-          "height" : 1
+          "mode" : "stretch",
+          "width" : 1
         },
         "cap-insets" : {
-          "bottom" : 5,
-          "top" : 4,
           "right" : 5,
           "left" : 4
         }
@@ -21,15 +18,12 @@
     },
     {
       "resizing" : {
-        "mode" : "9-part",
+        "mode" : "3-part-horizontal",
         "center" : {
-          "mode" : "tile",
-          "width" : 1,
-          "height" : 1
+          "mode" : "stretch",
+          "width" : 1
         },
         "cap-insets" : {
-          "bottom" : 10,
-          "top" : 10,
           "right" : 10,
           "left" : 10
         }
