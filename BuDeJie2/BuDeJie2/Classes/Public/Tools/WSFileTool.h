@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WSFileTool : NSObject
 
 
-+ (unsigned long long)getDirectorySize:(NSString *)directoryPath;
++ (void)getDirectorySize:(NSString *)directoryPath completion:(void(^)(unsigned long long totalSize))completion;
 
 + (void)removeDirectoryPath:(NSString *)directoryPath;
 

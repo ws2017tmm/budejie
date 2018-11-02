@@ -10,9 +10,7 @@
 
 @implementation WSFileTool
 
-+ (unsigned long long)getDirectorySize:(NSString *)directoryPath {
-    // 文件夹总大小
-    unsigned long long totalSize = 0;
++ (void)getDirectorySize:(NSString *)directoryPath completion:(void(^)(unsigned long long totalSize))completion {
     
     // 获取文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];
@@ -24,29 +22,41 @@
         @throw excp;
     }
     
-    //获取cachePath路径下所有的文件(包括文件夹和隐藏文件)
-    NSArray *subPaths = [mgr subpathsAtPath:directoryPath];
-    for (NSString *subPath in subPaths) {
-        // 拼接子文件的全路径
-        NSString *subFilePath = [directoryPath stringByAppendingPathComponent:subPath];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 文件夹总大小
+        unsigned long long totalSize = 0;
+        // 获取cachePath路径下所有的文件(包括文件夹和隐藏文件)
+        NSArray *subPaths = [mgr subpathsAtPath:directoryPath];
+        for (NSString *subPath in subPaths) {
+            // 拼接子文件的全路径
+            NSString *subFilePath = [directoryPath stringByAppendingPathComponent:subPath];
+            
+            // 判断是否是隐藏文件和文件夹
+            if ([subFilePath containsString:@".DS"]) continue;
+            BOOL isDirectory = NO;
+            // 判断文件是否存在,并且判断是否是文件夹
+            BOOL isExist = [mgr fileExistsAtPath:subFilePath isDirectory:&isDirectory];
+            if (!isExist || isDirectory) continue;
+            
+            // 获取文件的属性
+            NSError *error;
+            NSDictionary *attr = [mgr attributesOfItemAtPath:subFilePath error:&error];
+            if (error) continue;
+            // 计算文件大小
+            unsigned long long fileSize = [attr fileSize];
+            // 总大小
+            totalSize += fileSize;
+        }
+        // 计算完成回调
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion(totalSize);
+            }
+        });
         
-        // 判断是否是隐藏文件和文件夹
-        if ([subFilePath containsString:@".DS"]) continue;
-        BOOL isDirectory = NO;
-        // 判断文件是否存在,并且判断是否是文件夹
-        BOOL isExist = [mgr fileExistsAtPath:subFilePath isDirectory:&isDirectory];
-        if (!isExist || isDirectory) continue;
         
-        // 获取文件的属性
-        NSError *error;
-        NSDictionary *attr = [mgr attributesOfItemAtPath:subFilePath error:&error];
-        if (error) continue;
-        // 计算文件大小
-        unsigned long long fileSize = [attr fileSize];
-        // 总大小
-        totalSize += fileSize;
-    }
-    return totalSize;
+    });
+    
 }
 
 + (void)removeDirectoryPath:(NSString *)directoryPath {

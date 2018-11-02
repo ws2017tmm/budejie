@@ -8,7 +8,8 @@
 
 #import "WSSettingViewController.h"
 #import "WSFileTool.h"
-
+#import <SDImageCache.h>
+#import <SVProgressHUD.h>
 
 #define CachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
@@ -28,8 +29,12 @@ static NSString * const ID = @"cell";
     self.title = @"设置";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
     
-    _totalSize = [WSFileTool getDirectorySize:CachePath];
-    
+    [SVProgressHUD showWithStatus:@"正在计算缓存尺寸...."];
+    [WSFileTool getDirectorySize:CachePath completion:^(unsigned long long totalSize) {
+        [SVProgressHUD dismiss];
+        self.totalSize = totalSize;
+        [self.tableView reloadData];
+    }];
 }
 
 // 获取缓存尺寸字符串
