@@ -12,8 +12,9 @@
 #import "WSSquareItem.h"
 #import <AFNetworking.h>
 #import <MJExtension.h>
+#import <SafariServices/SafariServices.h>
 
-@interface WSMineViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface WSMineViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,SFSafariViewControllerDelegate>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *squareItems;
@@ -176,10 +177,37 @@ static CGFloat const margin = 1;
 }
 
 #pragma mark - UICollectionViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // 创建网页控制器
+    WSSquareItem *item = self.squareItems[indexPath.item];
+    if (![item.url containsString:@"http"]) return;
     
+    SFSafariViewControllerConfiguration *configuration = [[SFSafariViewControllerConfiguration alloc] init];
+    configuration.entersReaderIfAvailable = YES;
+    // 默认是yes
+    configuration.barCollapsingEnabled = YES;
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url] configuration:configuration];
+//    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
+    safariVC.delegate = self;
+    safariVC.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+    [self presentViewController:safariVC animated:YES completion:nil];
 }
 
+
+
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
+    WSFunc
+}
+
+- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
+    WSFunc
+}
+
+- (void)safariViewController:(SFSafariViewController *)controller initialLoadDidRedirectToURL:(NSURL *)URL API_AVAILABLE(ios(11.0)) {
+    NSLog(@"URL = %@",URL);
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

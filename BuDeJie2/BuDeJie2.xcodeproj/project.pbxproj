@@ -37,6 +37,7 @@
 		64223C4C218BDAEA008F64D9 /* WSLoginRegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64223C4B218BDAEA008F64D9 /* WSLoginRegisterViewController.storyboard */; };
 		64223C4F218BDF13008F64D9 /* WSFastLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64223C4E218BDF13008F64D9 /* WSFastLoginViewController.m */; };
 		64223C52218BF51A008F64D9 /* WSFastButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64223C51218BF51A008F64D9 /* WSFastButton.m */; };
+		64223C56218C38FB008F64D9 /* WSFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 64223C55218C38FB008F64D9 /* WSFileTool.m */; };
 		642907102189877C00CEDDB3 /* WSADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641A9E1321893790009E0ECE /* WSADViewController.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
@@ -103,6 +104,8 @@
 		64223C4E218BDF13008F64D9 /* WSFastLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFastLoginViewController.m; sourceTree = "<group>"; };
 		64223C50218BF51A008F64D9 /* WSFastButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSFastButton.h; sourceTree = "<group>"; };
 		64223C51218BF51A008F64D9 /* WSFastButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFastButton.m; sourceTree = "<group>"; };
+		64223C54218C38FB008F64D9 /* WSFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSFileTool.h; sourceTree = "<group>"; };
+		64223C55218C38FB008F64D9 /* WSFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFileTool.m; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +221,15 @@
 				641A9E1F21895D09009E0ECE /* LaunchImage.png */,
 			);
 			path = "启动图片";
+			sourceTree = "<group>";
+		};
+		64223C53218C38B7008F64D9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				64223C54218C38FB008F64D9 /* WSFileTool.h */,
+				64223C55218C38FB008F64D9 /* WSFileTool.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		6EC675AAC5264D48604B176D /* Pods */ = {
@@ -531,6 +543,7 @@
 		84AC1973217F592A00A522C2 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				64223C53218C38B7008F64D9 /* Tools */,
 				640EDC3F21899B8E00A217F5 /* Const */,
 				84AC199021809CE800A522C2 /* Lib */,
 				84AC1974217F592A00A522C2 /* category */,
@@ -749,6 +762,7 @@
 				640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */,
 				84AC1981217F6AFE00A522C2 /* UIView+Extension.m in Sources */,
 				84AC196A217B817600A522C2 /* WSPublishViewController.m in Sources */,
+				64223C56218C38FB008F64D9 /* WSFileTool.m in Sources */,
 				641A9E30218977E5009E0ECE /* AFHTTPSessionManager+manager.m in Sources */,
 				84AC1961217B812C00A522C2 /* WSNewViewController.m in Sources */,
 				640EDC69218AEDA000A217F5 /* WSSquareItem.m in Sources */,
