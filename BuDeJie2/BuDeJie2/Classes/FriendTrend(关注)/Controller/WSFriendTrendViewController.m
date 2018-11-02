@@ -51,7 +51,7 @@
     } else {
         WSFriendTrendNoLoginView *view = [WSFriendTrendNoLoginView loadFormXib];
         view.registerLoginBtnClick = ^{
-            WSLoginRegisterViewController *VC = [[WSLoginRegisterViewController alloc] init];
+            WSLoginRegisterViewController *VC = [[UIStoryboard storyboardWithName:@"WSLoginRegisterViewController" bundle:nil] instantiateInitialViewController];
             [self presentViewController:VC animated:YES completion:nil];
         };
         self.noLoginView = view;
