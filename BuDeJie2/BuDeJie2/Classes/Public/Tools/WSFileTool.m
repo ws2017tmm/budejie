@@ -53,10 +53,7 @@
                 completion(totalSize);
             }
         });
-        
-        
     });
-    
 }
 
 + (void)removeDirectoryPath:(NSString *)directoryPath {

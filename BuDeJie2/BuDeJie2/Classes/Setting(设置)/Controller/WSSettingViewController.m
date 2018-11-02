@@ -55,6 +55,7 @@ static NSString * const ID = @"cell";
         // B
         sizeStr = [NSString stringWithFormat:@"%@(%.ldB)",sizeStr,totalSize];
     }
+    sizeStr = [sizeStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
     return sizeStr;
 }
 
