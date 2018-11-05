@@ -24,6 +24,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ 根据路径计算文件目录的大小,得到字符串(1.2M,123KB,550B)
+
+ @param directoryPath 文件路径
+ @param completion 计算完成后的回调
+ */
++ (void)getDirectorySizeStr:(NSString *)directoryPath completion:(void(^)(NSString *sizeStr))completion;
+
+
+/**
  删除一个目录
 
  @param directoryPath 目录的路径

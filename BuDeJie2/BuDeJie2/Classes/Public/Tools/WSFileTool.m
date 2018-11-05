@@ -10,6 +10,12 @@
 
 @implementation WSFileTool
 
+/**
+ 根据路径计算文件目录的大小
+ 
+ @param directoryPath 文件路径
+ @param completion 计算完成后的回调
+ */
 + (void)getDirectorySize:(NSString *)directoryPath completion:(void(^)(unsigned long long totalSize))completion {
     
     // 获取文件管理者
@@ -56,6 +62,43 @@
     });
 }
 
+/**
+ 根据路径计算文件目录的大小,得到字符串(1.2M,123KB,550B)
+ 
+ @param directoryPath 文件路径
+ @param completion 计算完成后的回调
+ */
++ (void)getDirectorySizeStr:(NSString *)directoryPath completion:(void(^)(NSString *sizeStr))completion {
+    [self getDirectorySize:directoryPath completion:^(unsigned long long totalSize) {
+        
+        NSString *sizeStr = @"清除缓存";
+        // MB KB B
+        if (totalSize > 1000 * 1000) {
+            // MB
+            CGFloat sizeF = totalSize / 1000.0 / 1000.0;
+            sizeStr = [NSString stringWithFormat:@"%@(%.1fMB)",sizeStr,sizeF];
+        } else if (totalSize > 1000) {
+            // KB
+            CGFloat sizeF = totalSize / 1000.0;
+            sizeStr = [NSString stringWithFormat:@"%@(%.1fKB)",sizeStr,sizeF];
+        } else if (totalSize > 0) {
+            // B
+            sizeStr = [NSString stringWithFormat:@"%@(%lldB)",sizeStr,totalSize];
+        }
+        sizeStr = [sizeStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
+        
+        if (completion) {
+            completion(sizeStr);
+        }
+    }];
+}
+
+
+/**
+ 删除一个目录
+ 
+ @param directoryPath 目录的路径
+ */
 + (void)removeDirectoryPath:(NSString *)directoryPath {
     // 获取文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];

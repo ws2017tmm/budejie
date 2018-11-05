@@ -15,7 +15,7 @@
 
 @interface WSSettingViewController ()
 
-@property (assign, nonatomic) unsigned long long totalSize;
+@property (strong, nonatomic) NSString *totalSizeStr;
 
 @end
 
@@ -30,33 +30,12 @@ static NSString * const ID = @"cell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
     
     [SVProgressHUD showWithStatus:@"正在计算缓存尺寸...."];
-    [WSFileTool getDirectorySize:CachePath completion:^(unsigned long long totalSize) {
+    [WSFileTool getDirectorySizeStr:CachePath completion:^(NSString * _Nonnull sizeStr) {
         [SVProgressHUD dismiss];
-        self.totalSize = totalSize;
+        self.totalSizeStr = sizeStr;
         [self.tableView reloadData];
     }];
-}
-
-// 获取缓存尺寸字符串
-- (NSString *)sizeStr
-{
-    NSInteger totalSize = _totalSize;
-    NSString *sizeStr = @"清除缓存";
-    // MB KB B
-    if (totalSize > 1000 * 1000) {
-        // MB
-        CGFloat sizeF = totalSize / 1000.0 / 1000.0;
-        sizeStr = [NSString stringWithFormat:@"%@(%.1fMB)",sizeStr,sizeF];
-    } else if (totalSize > 1000) {
-        // KB
-        CGFloat sizeF = totalSize / 1000.0;
-        sizeStr = [NSString stringWithFormat:@"%@(%.1fKB)",sizeStr,sizeF];
-    } else if (totalSize > 0) {
-        // B
-        sizeStr = [NSString stringWithFormat:@"%@(%.ldB)",sizeStr,totalSize];
-    }
-    sizeStr = [sizeStr stringByReplacingOccurrencesOfString:@".0" withString:@""];
-    return sizeStr;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,7 +46,7 @@ static NSString * const ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     // 获取缓存尺寸字符串
-    cell.textLabel.text = [self sizeStr];
+    cell.textLabel.text = self.totalSizeStr;
     
     return cell;
 }
@@ -79,7 +58,7 @@ static NSString * const ID = @"cell";
     // 删除文件夹里面所有文件
     if (indexPath.row == 0) {
         [WSFileTool removeDirectoryPath:CachePath];
-        _totalSize = 0;
+        _totalSizeStr = @"清除缓存";
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
