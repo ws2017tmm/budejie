@@ -39,6 +39,11 @@
 		64223C52218BF51A008F64D9 /* WSFastButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64223C51218BF51A008F64D9 /* WSFastButton.m */; };
 		64223C56218C38FB008F64D9 /* WSFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 64223C55218C38FB008F64D9 /* WSFileTool.m */; };
 		642907102189877C00CEDDB3 /* WSADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641A9E1321893790009E0ECE /* WSADViewController.m */; };
+		64347A9F218FD33D008AF92C /* WSAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347A9E218FD33D008AF92C /* WSAllViewController.m */; };
+		64347AA2218FD35B008AF92C /* WSVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AA1218FD35B008AF92C /* WSVideoViewController.m */; };
+		64347AA5218FD371008AF92C /* WSPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AA4218FD371008AF92C /* WSPictureViewController.m */; };
+		64347AA8218FD383008AF92C /* WSVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AA7218FD383008AF92C /* WSVoiceViewController.m */; };
+		64347AAB218FD39A008AF92C /* WSWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AAA218FD39A008AF92C /* WSWordViewController.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
 		84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC194F217B7B6500A522C2 /* AppDelegate.m */; };
@@ -106,6 +111,16 @@
 		64223C51218BF51A008F64D9 /* WSFastButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFastButton.m; sourceTree = "<group>"; };
 		64223C54218C38FB008F64D9 /* WSFileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSFileTool.h; sourceTree = "<group>"; };
 		64223C55218C38FB008F64D9 /* WSFileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSFileTool.m; sourceTree = "<group>"; };
+		64347A9D218FD33D008AF92C /* WSAllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSAllViewController.h; sourceTree = "<group>"; };
+		64347A9E218FD33D008AF92C /* WSAllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSAllViewController.m; sourceTree = "<group>"; };
+		64347AA0218FD35B008AF92C /* WSVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSVideoViewController.h; sourceTree = "<group>"; };
+		64347AA1218FD35B008AF92C /* WSVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSVideoViewController.m; sourceTree = "<group>"; };
+		64347AA3218FD371008AF92C /* WSPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSPictureViewController.h; sourceTree = "<group>"; };
+		64347AA4218FD371008AF92C /* WSPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSPictureViewController.m; sourceTree = "<group>"; };
+		64347AA6218FD383008AF92C /* WSVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSVoiceViewController.h; sourceTree = "<group>"; };
+		64347AA7218FD383008AF92C /* WSVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSVoiceViewController.m; sourceTree = "<group>"; };
+		64347AA9218FD39A008AF92C /* WSWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSWordViewController.h; sourceTree = "<group>"; };
+		64347AAA218FD39A008AF92C /* WSWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSWordViewController.m; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +247,23 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		64347A9C218FD306008AF92C /* ChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				64347A9D218FD33D008AF92C /* WSAllViewController.h */,
+				64347A9E218FD33D008AF92C /* WSAllViewController.m */,
+				64347AA0218FD35B008AF92C /* WSVideoViewController.h */,
+				64347AA1218FD35B008AF92C /* WSVideoViewController.m */,
+				64347AA3218FD371008AF92C /* WSPictureViewController.h */,
+				64347AA4218FD371008AF92C /* WSPictureViewController.m */,
+				64347AA6218FD383008AF92C /* WSVoiceViewController.h */,
+				64347AA7218FD383008AF92C /* WSVoiceViewController.m */,
+				64347AA9218FD39A008AF92C /* WSWordViewController.h */,
+				64347AAA218FD39A008AF92C /* WSWordViewController.m */,
+			);
+			path = ChildVC;
+			sourceTree = "<group>";
+		};
 		6EC675AAC5264D48604B176D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +335,7 @@
 			children = (
 				84AC195C217B810D00A522C2 /* WSEssenceViewController.h */,
 				84AC195D217B810D00A522C2 /* WSEssenceViewController.m */,
+				64347A9C218FD306008AF92C /* ChildVC */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -751,18 +784,23 @@
 				84AC195B217B803800A522C2 /* WSTabBarController.m in Sources */,
 				64223C4F218BDF13008F64D9 /* WSFastLoginViewController.m in Sources */,
 				84AC197E217F5E5A00A522C2 /* WSSettingViewController.m in Sources */,
+				64347AA2218FD35B008AF92C /* WSVideoViewController.m in Sources */,
+				64347AA8218FD383008AF92C /* WSVoiceViewController.m in Sources */,
 				84AC198D217F7CD600A522C2 /* WSBackButton.m in Sources */,
 				84AC1977217F597D00A522C2 /* UIBarButtonItem+Item.m in Sources */,
 				84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */,
 				640EDC57218A9B1D00A217F5 /* WSRegisterLoginView.m in Sources */,
+				64347A9F218FD33D008AF92C /* WSAllViewController.m in Sources */,
 				84AC1964217B814400A522C2 /* WSFriendTrendViewController.m in Sources */,
 				84AC1954217B7B6500A522C2 /* main.m in Sources */,
+				64347AAB218FD39A008AF92C /* WSWordViewController.m in Sources */,
 				642907102189877C00CEDDB3 /* WSADViewController.m in Sources */,
 				640EDC53218A8AC600A217F5 /* WSLoginRegisterViewController.m in Sources */,
 				640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */,
 				84AC1981217F6AFE00A522C2 /* UIView+Extension.m in Sources */,
 				84AC196A217B817600A522C2 /* WSPublishViewController.m in Sources */,
 				64223C56218C38FB008F64D9 /* WSFileTool.m in Sources */,
+				64347AA5218FD371008AF92C /* WSPictureViewController.m in Sources */,
 				641A9E30218977E5009E0ECE /* AFHTTPSessionManager+manager.m in Sources */,
 				84AC1961217B812C00A522C2 /* WSNewViewController.m in Sources */,
 				640EDC69218AEDA000A217F5 /* WSSquareItem.m in Sources */,

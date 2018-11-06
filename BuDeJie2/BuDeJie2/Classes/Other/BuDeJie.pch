@@ -21,6 +21,8 @@
 #define WSFunc NSLog(@"%s",__func__)
 
 /***********屏幕适配*************/
+#define WSScreenBounds [UIScreen mainScreen].bounds
+#define WSScreenSize [UIScreen mainScreen].bounds.size
 #define WSScreenW [UIScreen mainScreen].bounds.size.width
 #define WSScreenH [UIScreen mainScreen].bounds.size.height
 #define iphoneX (WSScreenH == 812)
