@@ -54,6 +54,24 @@ NS_ASSUME_NONNULL_BEGIN
 /** 高度(像素) */
 @property (nonatomic, assign) NSInteger height;
 
+      /** -------------视频\音频--------------- **/
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 音频时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+/** 音频\视频的播放次数 */
+@property (nonatomic, assign) NSInteger playcount;
+
+/** -----------------底部view------------------- **/
+/** 顶数量 */
+@property (nonatomic, assign) NSInteger ding;
+/** 踩数量 */
+@property (nonatomic, assign) NSInteger cai;
+/** 转发\分享数量 */
+@property (nonatomic, assign) NSInteger repost;
+/** 评论数量 */
+@property (nonatomic, assign) NSInteger comment;
+
 
 /* 额外增加的属性（非服务器返回的属性）*/
 /** 是否为超长图片 */

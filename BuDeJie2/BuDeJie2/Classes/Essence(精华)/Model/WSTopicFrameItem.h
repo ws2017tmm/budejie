@@ -18,10 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 顶部view的frame */
 @property (assign, nonatomic) CGRect topViewFrame;
-/** 中间图片view的frame */
-@property (assign, nonatomic) CGRect pictureFrame;
-
-
+/** 中间view的frame */
+@property (assign, nonatomic) CGRect middleFrame;
+/** 底部view的frame */
+@property (assign, nonatomic) CGRect bottomFrame;
 
 /** 该Model对应的Cell高度 */
 @property (assign, nonatomic) CGFloat cellHeight;

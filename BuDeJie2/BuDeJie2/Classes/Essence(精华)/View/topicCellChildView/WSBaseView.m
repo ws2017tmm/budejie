@@ -7,6 +7,7 @@
 //
 
 #import "WSBaseView.h"
+#import "WSTopicItem.h"
 
 @implementation WSBaseView
 

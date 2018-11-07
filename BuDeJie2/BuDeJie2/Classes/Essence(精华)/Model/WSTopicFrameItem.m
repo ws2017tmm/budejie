@@ -32,19 +32,30 @@
     _cellHeight = CGRectGetMaxY(_topViewFrame) + margin;
     
     /**--------------中间view---------------*/
-    // 图片的frame
-    CGFloat pictureViewX = margin;
-    CGFloat pictureViewY = _cellHeight + margin;
-    CGFloat pictureViewW = WSScreenW - margin*2;
-    // 计算pictureView高度
-    CGFloat pictureViewH = topicItem.height * pictureViewW / topicItem.width;
-    if (pictureViewH > WSScreenH) {
-        pictureViewH = 250;
-        topicItem.bigPicture = YES;
+    if (topicItem.type != WSTopicTypeWord) {
+        // 图片的frame
+        CGFloat pictureViewX = margin;
+        CGFloat pictureViewY = _cellHeight + margin;
+        CGFloat pictureViewW = WSScreenW - margin*2;
+        // 计算pictureView高度
+        CGFloat pictureViewH = topicItem.height * pictureViewW / topicItem.width;
+        if (pictureViewH > WSScreenH) {
+            pictureViewH = 250;
+            topicItem.bigPicture = YES;
+        }
+        _middleFrame = CGRectMake(pictureViewX, pictureViewY, pictureViewW, pictureViewH);
+        _cellHeight = CGRectGetMaxY(_middleFrame) + margin;
     }
-    _pictureFrame = CGRectMake(pictureViewX, pictureViewY, pictureViewW, pictureViewH);
-    _cellHeight = CGRectGetMaxY(_pictureFrame) + margin;
     
+    /**--------------底部view---------------*/
+    // 图片的frame
+    CGFloat toolBarX = 0;
+    CGFloat toolBarY = _cellHeight;
+    CGFloat toolBarW = WSScreenW;
+    CGFloat toolBarH = 35;
+    _bottomFrame = CGRectMake(toolBarX, toolBarY, toolBarW, toolBarH);
+    
+    _cellHeight = CGRectGetMaxY(_bottomFrame);
 }
 
 @end
