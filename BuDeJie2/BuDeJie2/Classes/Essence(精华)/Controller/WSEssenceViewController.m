@@ -238,6 +238,15 @@ static NSString * const ID = @"ID";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+    // 先移除cell上的view
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    // 添加子控制器的view到cell上
+    UITableViewController *vc = self.childViewControllers[indexPath.item];
+    vc.tableView.contentInset = UIEdgeInsetsMake(WSTopTitleViewH, 0, 0, 0);
+    [cell.contentView addSubview:vc.view];
+    
     cell.backgroundColor = WSRandomColor;
     
     return cell;
@@ -279,7 +288,6 @@ static NSString * const ID = @"ID";
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     WSFunc
 }
-
 
 
 #pragma mark - 按钮的点击事件

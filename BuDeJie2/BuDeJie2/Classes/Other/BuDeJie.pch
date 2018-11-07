@@ -30,6 +30,7 @@
 #define iphone6 (WSScreenH == 667)
 #define iphone5 (WSScreenH == 568)
 #define iphone4 (WSScreenH == 480)
+#define WSMargin(margin) (margin) * (WSScreenW / 375.0)
 /***********屏幕适配*************/
 
 /***********颜色*************/

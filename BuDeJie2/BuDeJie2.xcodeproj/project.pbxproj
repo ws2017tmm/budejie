@@ -44,6 +44,14 @@
 		64347AA5218FD371008AF92C /* WSPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AA4218FD371008AF92C /* WSPictureViewController.m */; };
 		64347AA8218FD383008AF92C /* WSVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AA7218FD383008AF92C /* WSVoiceViewController.m */; };
 		64347AAB218FD39A008AF92C /* WSWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AAA218FD39A008AF92C /* WSWordViewController.m */; };
+		64347AAE2191388B008AF92C /* WSTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AAD2191388B008AF92C /* WSTopicCell.m */; };
+		64347AB221915EA5008AF92C /* WSTopicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AB121915EA5008AF92C /* WSTopicItem.m */; };
+		64347AB52191686B008AF92C /* WSTopicTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AB42191686B008AF92C /* WSTopicTopView.m */; };
+		64347ABA21928E86008AF92C /* WSMiddlePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AB921928E86008AF92C /* WSMiddlePictureView.m */; };
+		64347ABC21928E9C008AF92C /* WSTopicTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64347ABB21928E9C008AF92C /* WSTopicTopView.xib */; };
+		64347ABF21929813008AF92C /* WSTopicFrameItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347ABE21929813008AF92C /* WSTopicFrameItem.m */; };
+		64347AC12192B381008AF92C /* WSMiddlePictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64347AC02192B381008AF92C /* WSMiddlePictureView.xib */; };
+		64347AC42192C5F4008AF92C /* WSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AC32192C5F4008AF92C /* WSBaseView.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
 		84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC194F217B7B6500A522C2 /* AppDelegate.m */; };
@@ -121,6 +129,20 @@
 		64347AA7218FD383008AF92C /* WSVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSVoiceViewController.m; sourceTree = "<group>"; };
 		64347AA9218FD39A008AF92C /* WSWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSWordViewController.h; sourceTree = "<group>"; };
 		64347AAA218FD39A008AF92C /* WSWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSWordViewController.m; sourceTree = "<group>"; };
+		64347AAC2191388B008AF92C /* WSTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicCell.h; sourceTree = "<group>"; };
+		64347AAD2191388B008AF92C /* WSTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSTopicCell.m; sourceTree = "<group>"; };
+		64347AB021915EA5008AF92C /* WSTopicItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicItem.h; sourceTree = "<group>"; };
+		64347AB121915EA5008AF92C /* WSTopicItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSTopicItem.m; sourceTree = "<group>"; };
+		64347AB32191686B008AF92C /* WSTopicTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicTopView.h; sourceTree = "<group>"; };
+		64347AB42191686B008AF92C /* WSTopicTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSTopicTopView.m; sourceTree = "<group>"; };
+		64347AB821928E86008AF92C /* WSMiddlePictureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSMiddlePictureView.h; sourceTree = "<group>"; };
+		64347AB921928E86008AF92C /* WSMiddlePictureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSMiddlePictureView.m; sourceTree = "<group>"; };
+		64347ABB21928E9C008AF92C /* WSTopicTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSTopicTopView.xib; sourceTree = "<group>"; };
+		64347ABD21929813008AF92C /* WSTopicFrameItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicFrameItem.h; sourceTree = "<group>"; };
+		64347ABE21929813008AF92C /* WSTopicFrameItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSTopicFrameItem.m; sourceTree = "<group>"; };
+		64347AC02192B381008AF92C /* WSMiddlePictureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSMiddlePictureView.xib; sourceTree = "<group>"; };
+		64347AC22192C5F4008AF92C /* WSBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSBaseView.h; sourceTree = "<group>"; };
+		64347AC32192C5F4008AF92C /* WSBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSBaseView.m; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +286,21 @@
 			path = ChildVC;
 			sourceTree = "<group>";
 		};
+		64347AAF21913897008AF92C /* topicCellChildView */ = {
+			isa = PBXGroup;
+			children = (
+				64347AC22192C5F4008AF92C /* WSBaseView.h */,
+				64347AC32192C5F4008AF92C /* WSBaseView.m */,
+				64347AB32191686B008AF92C /* WSTopicTopView.h */,
+				64347AB42191686B008AF92C /* WSTopicTopView.m */,
+				64347ABB21928E9C008AF92C /* WSTopicTopView.xib */,
+				64347AB821928E86008AF92C /* WSMiddlePictureView.h */,
+				64347AB921928E86008AF92C /* WSMiddlePictureView.m */,
+				64347AC02192B381008AF92C /* WSMiddlePictureView.xib */,
+			);
+			path = topicCellChildView;
+			sourceTree = "<group>";
+		};
 		6EC675AAC5264D48604B176D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +380,10 @@
 		84AC193C217B7B6500A522C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64347AB021915EA5008AF92C /* WSTopicItem.h */,
+				64347AB121915EA5008AF92C /* WSTopicItem.m */,
+				64347ABD21929813008AF92C /* WSTopicFrameItem.h */,
+				64347ABE21929813008AF92C /* WSTopicFrameItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +391,9 @@
 		84AC193D217B7B6500A522C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64347AAC2191388B008AF92C /* WSTopicCell.h */,
+				64347AAD2191388B008AF92C /* WSTopicCell.m */,
+				64347AAF21913897008AF92C /* topicCellChildView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -711,6 +755,7 @@
 				641A9E2221895D09009E0ECE /* LaunchImage-800-667h@2x.png in Resources */,
 				640EDC4F2189B38B00A217F5 /* WSFriendTrendNoLoginView.xib in Resources */,
 				640EDC4A21899FCB00A217F5 /* WSSubTagCell.xib in Resources */,
+				64347AC12192B381008AF92C /* WSMiddlePictureView.xib in Resources */,
 				640EDC61218AE22D00A217F5 /* mine.storyboard in Resources */,
 				84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */,
 				641A9E2621895D09009E0ECE /* LaunchImage.png in Resources */,
@@ -718,6 +763,7 @@
 				641A9E2521895D09009E0ECE /* LaunchImage-700-568h@2x.png in Resources */,
 				641A9E2021895D09009E0ECE /* LaunchImage@2x.png in Resources */,
 				641A9E2121895D09009E0ECE /* LaunchImage-568h@2x.png in Resources */,
+				64347ABC21928E9C008AF92C /* WSTopicTopView.xib in Resources */,
 				641A9E2321895D09009E0ECE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				641A9E2421895D09009E0ECE /* LaunchImage-700@2x.png in Resources */,
 				640EDC59218A9B2B00A217F5 /* WSRegisterLoginView.xib in Resources */,
@@ -780,6 +826,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64347ABA21928E86008AF92C /* WSMiddlePictureView.m in Sources */,
 				640EDC4D2189B37400A217F5 /* WSFriendTrendNoLoginView.m in Sources */,
 				84AC195B217B803800A522C2 /* WSTabBarController.m in Sources */,
 				64223C4F218BDF13008F64D9 /* WSFastLoginViewController.m in Sources */,
@@ -790,12 +837,17 @@
 				84AC1977217F597D00A522C2 /* UIBarButtonItem+Item.m in Sources */,
 				84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */,
 				640EDC57218A9B1D00A217F5 /* WSRegisterLoginView.m in Sources */,
+				64347AB52191686B008AF92C /* WSTopicTopView.m in Sources */,
 				64347A9F218FD33D008AF92C /* WSAllViewController.m in Sources */,
 				84AC1964217B814400A522C2 /* WSFriendTrendViewController.m in Sources */,
 				84AC1954217B7B6500A522C2 /* main.m in Sources */,
+				64347AAE2191388B008AF92C /* WSTopicCell.m in Sources */,
 				64347AAB218FD39A008AF92C /* WSWordViewController.m in Sources */,
+				64347AC42192C5F4008AF92C /* WSBaseView.m in Sources */,
 				642907102189877C00CEDDB3 /* WSADViewController.m in Sources */,
+				64347ABF21929813008AF92C /* WSTopicFrameItem.m in Sources */,
 				640EDC53218A8AC600A217F5 /* WSLoginRegisterViewController.m in Sources */,
+				64347AB221915EA5008AF92C /* WSTopicItem.m in Sources */,
 				640EDC5C218ACF2E00A217F5 /* WSLoginTextField.m in Sources */,
 				84AC1981217F6AFE00A522C2 /* UIView+Extension.m in Sources */,
 				84AC196A217B817600A522C2 /* WSPublishViewController.m in Sources */,
