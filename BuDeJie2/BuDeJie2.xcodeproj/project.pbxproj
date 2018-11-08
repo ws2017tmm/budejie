@@ -58,6 +58,9 @@
 		64347ACE2192D7A9008AF92C /* WSMiddleVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64347ACD2192D7A9008AF92C /* WSMiddleVoiceView.xib */; };
 		64347AD12192DE87008AF92C /* WSBottomToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64347AD02192DE87008AF92C /* WSBottomToolBarView.m */; };
 		64347AD72192F097008AF92C /* WSBottomToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64347AD62192F097008AF92C /* WSBottomToolBarView.xib */; };
+		64D2612E2193D4B5000510E8 /* WSSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2612C2193D4B5000510E8 /* WSSeeBigPictureViewController.m */; };
+		64D2612F2193D4B5000510E8 /* WSSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64D2612D2193D4B5000510E8 /* WSSeeBigPictureViewController.xib */; };
+		64D26132219422AD000510E8 /* WSPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D26131219422AD000510E8 /* WSPhotoTool.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
 		84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC194F217B7B6500A522C2 /* AppDelegate.m */; };
@@ -158,6 +161,11 @@
 		64347ACF2192DE86008AF92C /* WSBottomToolBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSBottomToolBarView.h; sourceTree = "<group>"; };
 		64347AD02192DE87008AF92C /* WSBottomToolBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSBottomToolBarView.m; sourceTree = "<group>"; };
 		64347AD62192F097008AF92C /* WSBottomToolBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSBottomToolBarView.xib; sourceTree = "<group>"; };
+		64D2612B2193D4B5000510E8 /* WSSeeBigPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSSeeBigPictureViewController.h; sourceTree = "<group>"; };
+		64D2612C2193D4B5000510E8 /* WSSeeBigPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSSeeBigPictureViewController.m; sourceTree = "<group>"; };
+		64D2612D2193D4B5000510E8 /* WSSeeBigPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSSeeBigPictureViewController.xib; sourceTree = "<group>"; };
+		64D26130219422AD000510E8 /* WSPhotoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSPhotoTool.h; sourceTree = "<group>"; };
+		64D26131219422AD000510E8 /* WSPhotoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSPhotoTool.m; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,6 +288,8 @@
 			children = (
 				64223C54218C38FB008F64D9 /* WSFileTool.h */,
 				64223C55218C38FB008F64D9 /* WSFileTool.m */,
+				64D26130219422AD000510E8 /* WSPhotoTool.h */,
+				64D26131219422AD000510E8 /* WSPhotoTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -396,6 +406,9 @@
 			children = (
 				84AC195C217B810D00A522C2 /* WSEssenceViewController.h */,
 				84AC195D217B810D00A522C2 /* WSEssenceViewController.m */,
+				64D2612B2193D4B5000510E8 /* WSSeeBigPictureViewController.h */,
+				64D2612C2193D4B5000510E8 /* WSSeeBigPictureViewController.m */,
+				64D2612D2193D4B5000510E8 /* WSSeeBigPictureViewController.xib */,
 				64347A9C218FD306008AF92C /* ChildVC */,
 			);
 			path = Controller;
@@ -790,6 +803,7 @@
 				641A9E2521895D09009E0ECE /* LaunchImage-700-568h@2x.png in Resources */,
 				641A9E2021895D09009E0ECE /* LaunchImage@2x.png in Resources */,
 				641A9E2121895D09009E0ECE /* LaunchImage-568h@2x.png in Resources */,
+				64D2612F2193D4B5000510E8 /* WSSeeBigPictureViewController.xib in Resources */,
 				64347ABC21928E9C008AF92C /* WSTopicTopView.xib in Resources */,
 				641A9E2321895D09009E0ECE /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				641A9E2421895D09009E0ECE /* LaunchImage-700@2x.png in Resources */,
@@ -883,6 +897,7 @@
 				64347AA5218FD371008AF92C /* WSPictureViewController.m in Sources */,
 				641A9E30218977E5009E0ECE /* AFHTTPSessionManager+manager.m in Sources */,
 				84AC1961217B812C00A522C2 /* WSNewViewController.m in Sources */,
+				64D2612E2193D4B5000510E8 /* WSSeeBigPictureViewController.m in Sources */,
 				640EDC69218AEDA000A217F5 /* WSSquareItem.m in Sources */,
 				640EDC3E2189993100A217F5 /* WSSubTagViewController.m in Sources */,
 				84AC195E217B810D00A522C2 /* WSEssenceViewController.m in Sources */,
@@ -894,6 +909,7 @@
 				84AC196D217F492D00A522C2 /* WSNavigationController.m in Sources */,
 				64347AD12192DE87008AF92C /* WSBottomToolBarView.m in Sources */,
 				640EDC4521899DCC00A217F5 /* WSSubTagItem.m in Sources */,
+				64D26132219422AD000510E8 /* WSPhotoTool.m in Sources */,
 				640EDC4221899BAD00A217F5 /* WSConst.m in Sources */,
 				64347ACC2192D76C008AF92C /* WSMiddleVoiceView.m in Sources */,
 				84AC1967217B815D00A522C2 /* WSMineViewController.m in Sources */,

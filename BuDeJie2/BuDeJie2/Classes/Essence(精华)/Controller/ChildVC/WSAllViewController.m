@@ -74,7 +74,7 @@ static NSString * const cellID = @"cellID";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(1);
+    parameters[@"type"] = @(10);
     
     [mgr GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 解析数据(字典转模型)

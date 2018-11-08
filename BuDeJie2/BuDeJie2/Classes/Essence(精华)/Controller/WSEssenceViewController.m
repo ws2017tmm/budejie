@@ -247,8 +247,6 @@ static NSString * const ID = @"ID";
     vc.tableView.contentInset = UIEdgeInsetsMake(WSTopTitleViewH, 0, 0, 0);
     [cell.contentView addSubview:vc.view];
     
-    cell.backgroundColor = WSRandomColor;
-    
     return cell;
 }
 

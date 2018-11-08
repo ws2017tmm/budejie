@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - DACircularProgress (2.3.1)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - SDWebImage (5.0.0-beta3):
@@ -23,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
+  - DACircularProgress (~> 2.3.1)
   - Masonry (~> 1.1.0)
   - MJExtension (~> 3.0.15.1)
   - SDWebImage (~> 5.0.0-beta3)
@@ -31,6 +33,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - DACircularProgress
     - Masonry
     - MJExtension
     - SDWebImage
@@ -38,11 +41,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   SDWebImage: e52654ceef9fdc19f4c612d64a5b6d3f05dd81a4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 739268f454af0b3d220802d3b714dc5cb5f31593
+PODFILE CHECKSUM: 1f3710191cd4beca55c88ff86756d57fb48148c9
 
 COCOAPODS: 1.5.3

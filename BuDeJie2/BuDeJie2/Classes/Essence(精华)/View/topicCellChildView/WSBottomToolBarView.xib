@@ -116,7 +116,7 @@
                 <outlet property="dingButton" destination="9Yh-s0-MR0" id="F5i-l7-NR0"/>
                 <outlet property="shareButton" destination="t7k-gt-66S" id="gej-Ce-mS5"/>
             </connections>
-            <point key="canvasLocation" x="209.59999999999999" y="-32.833583208395808"/>
+            <point key="canvasLocation" x="158" y="-254"/>
         </view>
     </objects>
     <resources>
