@@ -44,6 +44,7 @@
             topicItem.bigPicture = YES;
         }
         _middleFrame = CGRectMake(pictureViewX, pictureViewY, pictureViewW, pictureViewH);
+        topicItem.middleFrame = _middleFrame;
         _cellHeight = CGRectGetMaxY(_middleFrame) + margin;
     }
     

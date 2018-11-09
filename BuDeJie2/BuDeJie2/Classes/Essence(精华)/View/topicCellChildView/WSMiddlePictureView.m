@@ -59,9 +59,8 @@
     [super setTopicItem:topicItem];
     
     self.placeholderView.hidden = NO;
-    
     self.progressView.hidden = NO;
-    [self.imageView ws_setOriginImage:topicItem.image1 thumbnailImage:topicItem.image0 placeholder:nil progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    [self.imageView ws_setOriginImage:topicItem.image1 thumbnailImage:topicItem.image0 placeholder:[UIImage imageNamed:@"mainCellBackground"] progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         
         CGFloat progress = 1.0 * receivedSize / expectedSize;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -76,8 +75,22 @@
         self.progressView.progress = 0;
         self.progressView.progressLabel.text = @"";
         self.progressView.hidden = YES;
+        
+        // 处理超长图片的大小
+        if (topicItem.isBigPicture) {
+            CGFloat imageW = topicItem.middleFrame.size.width;
+            CGFloat imageH = imageW * topicItem.height / topicItem.width;
+            
+            // 开启上下文
+            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
+            // 绘制图片到上下文中
+            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            // 关闭上下文
+            UIGraphicsEndImageContext();
+        }
+        
     }];
-    
     
     self.gifImageView.hidden = !topicItem.is_gif;
     if (topicItem.isBigPicture) { // 超长图
@@ -89,6 +102,8 @@
         self.imageView.contentMode = UIViewContentModeScaleToFill;
         self.imageView.clipsToBounds = NO;
     }
+
+    
 }
 
 

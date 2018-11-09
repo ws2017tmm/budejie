@@ -86,7 +86,10 @@ static NSString * const cellID = @"cellID";
             topicFrameItem.topicItem = topicItem;
             [self.topicFrameArray addObject:topicFrameItem];
         }
-        
+        [self.topicFrameArray removeObjectAtIndex:0];
+        [self.topicFrameArray removeObjectAtIndex:0];
+        [self.topicFrameArray removeObjectAtIndex:0];
+        [self.topicFrameArray removeObjectAtIndex:0];
         // 刷新数据
         [self.tableView reloadData];
         

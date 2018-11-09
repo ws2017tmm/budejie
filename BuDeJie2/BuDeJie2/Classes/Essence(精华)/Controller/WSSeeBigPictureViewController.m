@@ -42,9 +42,25 @@
     
     // 添加 imageView
     UIImageView *imageView = [[UIImageView alloc] init];
+    [self.scrollView addSubview:imageView];
+    self.imageView = imageView;
+    
     [imageView sd_setImageWithURL:[NSURL URLWithString:self.topicItem.image1] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (!image) return;
         self.saveButton.enabled = YES;
+        // 处理超长图片的大小
+        if (self.topicItem.isBigPicture) {
+            CGFloat imageW = WSScreenW;
+            CGFloat imageH = WSScreenW / self.topicItem.width * self.topicItem.height;
+
+            // 开启上下文
+            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
+            // 绘制图片到上下文中
+            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            // 关闭上下文
+            UIGraphicsEndImageContext();
+        }
     }];
     
     CGFloat imageViewH = WSScreenW / _topicItem.width * _topicItem.height;
@@ -54,8 +70,6 @@
     } else { // 小图
         imageView.center = CGPointMake(WSScreenW * 0.5, WSScreenH * 0.5);
     }
-    [self.scrollView addSubview:imageView];
-    self.imageView = imageView;
     
     // 图片缩放
     CGFloat maxScale = self.topicItem.width / imageView.ws_width;

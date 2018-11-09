@@ -76,6 +76,8 @@ NS_ASSUME_NONNULL_BEGIN
 /* 额外增加的属性（非服务器返回的属性）*/
 /** 是否为超长图片 */
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
+/** 中间内容的frame */
+@property (nonatomic, assign) CGRect middleFrame;
 
 @end
 
