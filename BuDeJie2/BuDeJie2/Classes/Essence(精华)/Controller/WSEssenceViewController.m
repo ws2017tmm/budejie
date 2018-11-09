@@ -284,7 +284,7 @@ static NSString * const ID = @"ID";
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    WSFunc
+//    WSFunc
 }
 
 
@@ -293,7 +293,7 @@ static NSString * const ID = @"ID";
  游戏按钮
  */
 - (void)game {
-    WSFunc
+//    WSFunc
 }
 
 

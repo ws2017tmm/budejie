@@ -87,21 +87,21 @@
  微信登录
  */
 - (void)weChatLogin {
-    WSFunc
+//    WSFunc
 }
 
 /**
  qq登录
  */
 - (void)qqLogin {
-    WSFunc
+//    WSFunc
 }
 
 /**
  微博登录
  */
 - (void)sinaWeiboLogin {
-    WSFunc
+//    WSFunc
 }
 
 @end

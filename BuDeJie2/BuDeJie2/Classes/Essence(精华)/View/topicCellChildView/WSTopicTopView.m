@@ -92,27 +92,13 @@
     self.timeLabel.text = topicItem.passtime;
     self.contentLabel.text = topicItem.text;
     
-//    [self layoutIfNeeded];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-//    
-//    CGFloat cellHeight = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height+1;
-//    _topicItem.cellHeight = cellHeight;
-}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.contentLabel.font = [UIFont systemFontOfSize:15];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

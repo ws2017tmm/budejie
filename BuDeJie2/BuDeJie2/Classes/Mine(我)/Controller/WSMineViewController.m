@@ -197,11 +197,11 @@ static CGFloat const margin = 1;
 
 
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-    WSFunc
+//    WSFunc
 }
 
 - (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
-    WSFunc
+//    WSFunc
 }
 
 - (void)safariViewController:(SFSafariViewController *)controller initialLoadDidRedirectToURL:(NSURL *)URL API_AVAILABLE(ios(11.0)) {

@@ -11,8 +11,6 @@
 #import <SDImageCache.h>
 #import <SVProgressHUD.h>
 
-#define CachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
-
 @interface WSSettingViewController ()
 
 @property (strong, nonatomic) NSString *totalSizeStr;
@@ -30,7 +28,7 @@ static NSString * const ID = @"cell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];
     
     [SVProgressHUD showWithStatus:@"正在计算缓存尺寸...."];
-    [WSFileTool getDirectorySizeStr:CachePath completion:^(NSString * _Nonnull sizeStr) {
+    [WSFileTool getDirectorySizeStr:WSCachePath completion:^(NSString * _Nonnull sizeStr) {
         [SVProgressHUD dismiss];
         self.totalSizeStr = sizeStr;
         [self.tableView reloadData];
@@ -57,7 +55,7 @@ static NSString * const ID = @"cell";
     // 清空缓存
     // 删除文件夹里面所有文件
     if (indexPath.row == 0) {
-        [WSFileTool removeDirectoryPath:CachePath];
+        [WSFileTool removeDirectoryPath:WSCachePath];
         _totalSizeStr = @"清除缓存";
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }

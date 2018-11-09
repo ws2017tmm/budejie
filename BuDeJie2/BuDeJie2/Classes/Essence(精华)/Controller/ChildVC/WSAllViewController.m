@@ -14,24 +14,17 @@
 #import "WSTopicFrameItem.h"
 #import "WSTopicCell.h"
 
+#define WSEssencePlistPath [WSCachePath stringByAppendingPathComponent:@"essence.plist"]
 
 static NSString * const cellID = @"cellID";
 
 @interface WSAllViewController ()
 
 @property (strong, nonatomic) NSMutableArray *topicFrameArray;
-//@property (strong, nonatomic) WSTopicCell *tempCell;
 
 @end
 
 @implementation WSAllViewController
-
-//- (WSTopicCell *)tempCell {
-//    if (_tempCell == nil) {
-//        _tempCell = [[WSTopicCell alloc] initWithStyle:0 reuseIdentifier:cellID];
-//    }
-//    return _tempCell;
-//}
 
 - (NSMutableArray *)topicFrameArray {
     if (_topicFrameArray == nil) {
@@ -46,8 +39,11 @@ static NSString * const cellID = @"cellID";
     // 设置tableView
     [self setupTableView];
     
-    // 加载数据
-    [self loadAllData];
+    // 本地加载数据(预先展示，防止网络不好，空数据)
+//    [self loadAllDataFromLocal];
+    
+    // 网络请求数据
+    [self loadAllDataFromNetwork];
     
     
     
@@ -60,15 +56,21 @@ static NSString * const cellID = @"cellID";
  */
 - (void)setupTableView {
     
-//    self.tableView.rowHeight = 200;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerClass:WSTopicCell.class forCellReuseIdentifier:cellID];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    // 滚动指示器的内边距和tableView一致
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
 /**
- 加载数据
+ 网络加载数据
  */
-- (void)loadAllData {
+- (void)loadAllDataFromNetwork {
+    
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager ws_manager];
     // 2.拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
@@ -76,7 +78,13 @@ static NSString * const cellID = @"cellID";
     parameters[@"c"] = @"data";
     parameters[@"type"] = @(10);
     
-    [mgr GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [mgr GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+        
+        // 缓存plist
+//        @synchronized (self) {
+//            [responseObject writeToFile:WSEssencePlistPath atomically:YES];
+//        }
+        
         // 解析数据(字典转模型)
         NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
@@ -86,10 +94,7 @@ static NSString * const cellID = @"cellID";
             topicFrameItem.topicItem = topicItem;
             [self.topicFrameArray addObject:topicFrameItem];
         }
-        [self.topicFrameArray removeObjectAtIndex:0];
-        [self.topicFrameArray removeObjectAtIndex:0];
-        [self.topicFrameArray removeObjectAtIndex:0];
-        [self.topicFrameArray removeObjectAtIndex:0];
+        
         // 刷新数据
         [self.tableView reloadData];
         
@@ -98,6 +103,46 @@ static NSString * const cellID = @"cellID";
             [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
         }
     }];
+}
+
+/**
+ 本地加载数据
+ */
+- (void)loadAllDataFromLocal1 {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:WSEssencePlistPath];
+    NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:dict[@"list"]];
+    // 转换模型(提前计算frame)
+    for (WSTopicItem *topicItem in tempArray) {
+        WSTopicFrameItem *topicFrameItem = [[WSTopicFrameItem alloc] init];
+        topicFrameItem.topicItem = topicItem;
+        [self.topicFrameArray addObject:topicFrameItem];
+    }
+    [self.tableView reloadData];
+}
+
+- (void)loadAllDataFromLocal {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 先从本地plist里尝试加载数据(展示最后一次刷新的数据)
+        //从文件当中读取字典, 保存的plist文件就是一个字典,这里直接填写plist文件所存的路径
+        NSMutableDictionary *dict;
+        @synchronized (self) {
+            dict = [NSMutableDictionary dictionaryWithContentsOfFile:WSEssencePlistPath];
+        }
+        // 解析数据(字典转模型)
+        NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:dict[@"list"]];
+        
+        // 转换模型(提前计算frame)
+        for (WSTopicItem *topicItem in tempArray) {
+            WSTopicFrameItem *topicFrameItem = [[WSTopicFrameItem alloc] init];
+            topicFrameItem.topicItem = topicItem;
+            [self.topicFrameArray addObject:topicFrameItem];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 刷新数据
+            [self.tableView reloadData];
+        });
+    });
 }
 
 #pragma mark - Table view data source
@@ -112,6 +157,7 @@ static NSString * const cellID = @"cellID";
     // Configure the cell...
     cell.topicFrameItem = topicFrameItem;
     
+//    NSLog(@"--------cellForRowAtIndexPath");
     return cell;
 }
 

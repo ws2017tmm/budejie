@@ -84,7 +84,7 @@
             // 开启上下文
             UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
             // 绘制图片到上下文中
-            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+            [image drawInRect:CGRectMake(0, 0, imageW, imageH)];
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
             // 关闭上下文
             UIGraphicsEndImageContext();
