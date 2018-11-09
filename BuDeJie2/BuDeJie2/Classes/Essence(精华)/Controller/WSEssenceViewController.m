@@ -154,7 +154,7 @@ static NSString * const ID = @"ID";
     UIScrollView *topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, y, WSScreenW, WSTopTitleViewH)];
     topScrollView.showsHorizontalScrollIndicator = NO;
     topScrollView.showsVerticalScrollIndicator = NO;
-    topScrollView.backgroundColor = UIColor.greenColor;
+    topScrollView.backgroundColor = UIColor.whiteColor;
     _topTilteScrollView = topScrollView;
     [self.view addSubview:topScrollView];
 }

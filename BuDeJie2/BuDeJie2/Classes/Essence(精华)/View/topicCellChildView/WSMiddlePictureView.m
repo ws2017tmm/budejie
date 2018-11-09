@@ -60,7 +60,13 @@
     
     self.placeholderView.hidden = NO;
     self.progressView.hidden = NO;
-    [self.imageView ws_setOriginImage:topicItem.image1 thumbnailImage:topicItem.image0 placeholder:[UIImage imageNamed:@"mainCellBackground"] progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    NSString *thumbnailImage;
+    if (topicItem.is_gif) {
+        thumbnailImage = topicItem.gifFistFrame;
+    } else {
+        thumbnailImage = topicItem.image0;
+    }
+    [self.imageView ws_setOriginImage:topicItem.image1 thumbnailImage:thumbnailImage placeholder:[UIImage imageNamed:@"mainCellBackground"] progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
         
         CGFloat progress = 1.0 * receivedSize / expectedSize;
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -33,9 +33,9 @@
     if ([createDate isThisYear]) { //今年
         if ([createDate isToday]) { //今天
             if (cmps.hour >= 1) { //xx小时前
-                return [NSString stringWithFormat:@"%d小时前",cmps.hour];
+                return [NSString stringWithFormat:@"%zd小时前",cmps.hour];
             } else if (cmps.minute > 1) { //xx分钟前
-                return [NSString stringWithFormat:@"%d分钟前",cmps.minute];
+                return [NSString stringWithFormat:@"%zd分钟前",cmps.minute];
             } else{
                 return @"刚刚";
             }

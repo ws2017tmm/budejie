@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *image2;
 /** 大图 */
 @property (nonatomic, copy) NSString *image1;
+/** gif的第一张图片 */
+@property (nonatomic, copy) NSString *gifFistFrame;
 /** 是否为动图 */
 @property (nonatomic, assign) BOOL is_gif;
 /** 宽度(像素) */
