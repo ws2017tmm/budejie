@@ -58,6 +58,7 @@ static NSString * const cellID = @"cellID";
     
     [self.tableView registerClass:WSTopicCell.class forCellReuseIdentifier:cellID];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = UIColor.lightGrayColor;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -163,7 +164,8 @@ static NSString * const cellID = @"cellID";
 
 #pragma mark - Table view delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    static int i = 0;
+    NSLog(@"----%d",i);
     WSTopicFrameItem *topicFrameItem = self.topicFrameArray[indexPath.row];
     return topicFrameItem.cellHeight;
 }
