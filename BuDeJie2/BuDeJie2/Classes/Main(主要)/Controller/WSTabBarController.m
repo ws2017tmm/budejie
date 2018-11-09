@@ -84,7 +84,8 @@
     WSNavigationController *nav = [[WSNavigationController alloc] initWithRootViewController:vc];
     nav.tabBarItem.title = title;
     nav.tabBarItem.image = [UIImage imageNamed:imageName];
-    nav.tabBarItem.selectedImage = [[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav.tabBarItem.selectedImage = [UIImage ws_imageOriginalWithName:selImageName];
+//    nav.tabBarItem.selectedImage = [[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     return nav;
     

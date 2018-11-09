@@ -36,6 +36,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        // 取消选中状态
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         /**--------------顶部view--------------*/
         // (包括头像，昵称，时间，正文)
         WSTopicTopView *topView = [WSTopicTopView loadFormXib];

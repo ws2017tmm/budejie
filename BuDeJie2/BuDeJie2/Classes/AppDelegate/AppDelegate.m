@@ -27,7 +27,8 @@
     
     [self.window makeKeyAndVisible];
     
-    
+    // 开始监控网络状况
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     return YES;
 }

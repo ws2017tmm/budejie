@@ -43,6 +43,7 @@
 #import "UIView+Extension.h"
 #import "AFHTTPSessionManager+manager.h"
 #import "WSConst.h"
-
+#import "UIImage+Image.h"
+#import "UIImageView+Download.h"
 
 #endif /* BuDeJie_pch */

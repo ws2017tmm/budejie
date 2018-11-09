@@ -86,7 +86,8 @@
 - (void)setTopicItem:(WSTopicItem *)topicItem {
     [super setTopicItem:topicItem];
     
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:topicItem.profile_image]];
+//    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:topicItem.profile_image]];
+    [self.headImageView ws_setHeader:topicItem.profile_image];
     self.nameLabel.text = topicItem.name;
     self.timeLabel.text = topicItem.passtime;
     self.contentLabel.text = topicItem.text;

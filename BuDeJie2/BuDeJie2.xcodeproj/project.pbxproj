@@ -61,6 +61,8 @@
 		64D2612E2193D4B5000510E8 /* WSSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2612C2193D4B5000510E8 /* WSSeeBigPictureViewController.m */; };
 		64D2612F2193D4B5000510E8 /* WSSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64D2612D2193D4B5000510E8 /* WSSeeBigPictureViewController.xib */; };
 		64D26132219422AD000510E8 /* WSPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D26131219422AD000510E8 /* WSPhotoTool.m */; };
+		64D2613521943488000510E8 /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2613421943488000510E8 /* UIImageView+Download.m */; };
+		64D2613B21943C07000510E8 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2613A21943C07000510E8 /* UIImage+Image.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
 		84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC194F217B7B6500A522C2 /* AppDelegate.m */; };
@@ -166,6 +168,10 @@
 		64D2612D2193D4B5000510E8 /* WSSeeBigPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WSSeeBigPictureViewController.xib; sourceTree = "<group>"; };
 		64D26130219422AD000510E8 /* WSPhotoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSPhotoTool.h; sourceTree = "<group>"; };
 		64D26131219422AD000510E8 /* WSPhotoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSPhotoTool.m; sourceTree = "<group>"; };
+		64D2613321943488000510E8 /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		64D2613421943488000510E8 /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
+		64D2613921943C07000510E8 /* UIImage+Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		64D2613A21943C07000510E8 /* UIImage+Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -676,6 +682,10 @@
 				84AC1976217F597D00A522C2 /* UIBarButtonItem+Item.m */,
 				640EDC5D218AD1DF00A217F5 /* UITextField+placeholder.h */,
 				640EDC5E218AD1DF00A217F5 /* UITextField+placeholder.m */,
+				64D2613921943C07000510E8 /* UIImage+Image.h */,
+				64D2613A21943C07000510E8 /* UIImage+Image.m */,
+				64D2613321943488000510E8 /* UIImageView+Download.h */,
+				64D2613421943488000510E8 /* UIImageView+Download.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -875,8 +885,10 @@
 				64347AA2218FD35B008AF92C /* WSVideoViewController.m in Sources */,
 				64347AA8218FD383008AF92C /* WSVoiceViewController.m in Sources */,
 				84AC198D217F7CD600A522C2 /* WSBackButton.m in Sources */,
+				64D2613521943488000510E8 /* UIImageView+Download.m in Sources */,
 				84AC1977217F597D00A522C2 /* UIBarButtonItem+Item.m in Sources */,
 				84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */,
+				64D2613B21943C07000510E8 /* UIImage+Image.m in Sources */,
 				640EDC57218A9B1D00A217F5 /* WSRegisterLoginView.m in Sources */,
 				64347AB52191686B008AF92C /* WSTopicTopView.m in Sources */,
 				64347A9F218FD33D008AF92C /* WSAllViewController.m in Sources */,

@@ -24,7 +24,14 @@
 - (void)setTopicItem:(WSTopicItem *)topicItem {
     [super setTopicItem:topicItem];
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topicItem.image0]];
+    self.placeholderView.hidden = NO;
+    
+    [self.imageView ws_setOriginImage:topicItem.image1 thumbnailImage:topicItem.image0 placeholder:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        
+        if (!image) return;
+        self.placeholderView.hidden = YES;
+    }];
+    
     // 播放数量
     if (topicItem.playcount >= 10000) {
         self.playcountLabel.text = [NSString stringWithFormat:@"%.1f万播放", topicItem.playcount / 10000.0];
