@@ -63,6 +63,7 @@
 		64D26132219422AD000510E8 /* WSPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D26131219422AD000510E8 /* WSPhotoTool.m */; };
 		64D2613521943488000510E8 /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2613421943488000510E8 /* UIImageView+Download.m */; };
 		64D2613B21943C07000510E8 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2613A21943C07000510E8 /* UIImage+Image.m */; };
+		64D2613E21957A61000510E8 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D2613D21957A61000510E8 /* NSDate+Extension.m */; };
 		84AC192D217B6B9D00A522C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AC192C217B6B9D00A522C2 /* Assets.xcassets */; };
 		84AC1954217B7B6500A522C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC193F217B7B6500A522C2 /* main.m */; };
 		84AC1955217B7B6500A522C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC194F217B7B6500A522C2 /* AppDelegate.m */; };
@@ -172,6 +173,8 @@
 		64D2613421943488000510E8 /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 		64D2613921943C07000510E8 /* UIImage+Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		64D2613A21943C07000510E8 /* UIImage+Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		64D2613C21957A61000510E8 /* NSDate+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		64D2613D21957A61000510E8 /* NSDate+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		822F2343421196749232F885 /* libPods-BuDeJie2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuDeJie2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC1920217B6B9C00A522C2 /* BuDeJie2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuDeJie2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AC192C217B6B9D00A522C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -686,6 +689,8 @@
 				64D2613A21943C07000510E8 /* UIImage+Image.m */,
 				64D2613321943488000510E8 /* UIImageView+Download.h */,
 				64D2613421943488000510E8 /* UIImageView+Download.m */,
+				64D2613C21957A61000510E8 /* NSDate+Extension.h */,
+				64D2613D21957A61000510E8 /* NSDate+Extension.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				84AC196D217F492D00A522C2 /* WSNavigationController.m in Sources */,
 				64347AD12192DE87008AF92C /* WSBottomToolBarView.m in Sources */,
 				640EDC4521899DCC00A217F5 /* WSSubTagItem.m in Sources */,
+				64D2613E21957A61000510E8 /* NSDate+Extension.m in Sources */,
 				64D26132219422AD000510E8 /* WSPhotoTool.m in Sources */,
 				640EDC4221899BAD00A217F5 /* WSConst.m in Sources */,
 				64347ACC2192D76C008AF92C /* WSMiddleVoiceView.m in Sources */,
