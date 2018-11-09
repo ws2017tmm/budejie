@@ -56,7 +56,7 @@
     CGFloat toolBarH = 35;
     _bottomFrame = CGRectMake(toolBarX, toolBarY, toolBarW, toolBarH);
     
-    _cellHeight = CGRectGetMaxY(_bottomFrame) + margin*2;
+    _cellHeight = CGRectGetMaxY(_bottomFrame) + margin;
     
 }
 
