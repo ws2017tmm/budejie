@@ -55,11 +55,12 @@ static NSString * const cellID = @"cellID";
     [self setupRefresh];
     
     // 本地加载数据(预先展示，防止网络不好，空数据)
-//    [self loadAllDataFromLocal];
+    [self loadAllDataFromLocal];
     
     
     // 网络请求数据
-    [self loadAllDataFromNetwork];
+    [self.tableView.mj_header beginRefreshing];
+//    [self loadNewData];
     
     
 }
@@ -81,6 +82,11 @@ static NSString * const cellID = @"cellID";
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf loadNewData];
     }];
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadOldData];
+    }];
+    
 }
 
 - (void)viewDidLayoutSubviews {
@@ -89,114 +95,9 @@ static NSString * const cellID = @"cellID";
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
-#pragma mark - 网络请求数据
 /**
- 第一次加载网络数据
+  下拉本地加载数据本地加载数据
  */
-- (void)loadAllDataFromNetwork {
-    
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager ws_manager];
-    // 2.拼接参数
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"a"] = @"list";
-    parameters[@"c"] = @"data";
-    parameters[@"type"] = @(10);
-    
-    [mgr GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
-        
-        // 缓存plist
-//        @synchronized (self) {
-//            [responseObject writeToFile:WSEssencePlistPath atomically:YES];
-//        }
-        
-        // 存储maxtime
-        self.maxtime = responseObject[@"info"][@"maxtime"];
-        
-        // 解析数据(字典转模型)
-        NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
-        // 转换模型(提前计算frame)
-        [self topicFrameArrWithTopic:tempArray];
-        
-        // 刷新数据
-        [self.tableView reloadData];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
-            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
-        }
-    }];
-}
-
-/**
- 下拉刷新数据
- */
-- (void)loadNewData {
-    // 1.取消之前的请求
-    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
-    
-    // 2.拼接参数
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"a"] = @"list";
-    parameters[@"c"] = @"data";
-    parameters[@"type"] = @(10);
-    parameters[@"maxtime"] = self.maxtime;
-    
-    // 3.发送请求
-    [self.manager GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
-        // 存储maxtime
-        self.maxtime = responseObject[@"info"][@"maxtime"];
-        
-        // 字典数组 -> 模型数据
-        NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
-        // 转换模型(提前计算frame)
-        [self topicFrameArrWithTopic:tempArray];
-        
-        // 刷新表格
-        [self.tableView reloadData];
-        
-        // 结束刷新
-        [self.tableView.mj_header endRefreshing];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
-            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
-        }
-        
-        // 结束刷新
-        [self.tableView.mj_header endRefreshing];
-    }];
-}
-
-
-/**
-  模型转换成topicFrameItem 的数组
-
- @param topicItemArray 传入topicItem模型的数组
- */
-- (void)topicFrameArrWithTopic:(NSArray *)topicItemArray {
-    for (WSTopicItem *topicItem in topicItemArray) {
-        WSTopicFrameItem *topicFrameItem = [[WSTopicFrameItem alloc] init];
-        topicFrameItem.topicItem = topicItem;
-        [self.topicFrameArray addObject:topicFrameItem];
-    }
-}
-
-/**
- 本地加载数据
- */
-- (void)loadAllDataFromLocal1 {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:WSEssencePlistPath];
-    NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:dict[@"list"]];
-    // 转换模型(提前计算frame)
-    for (WSTopicItem *topicItem in tempArray) {
-        WSTopicFrameItem *topicFrameItem = [[WSTopicFrameItem alloc] init];
-        topicFrameItem.topicItem = topicItem;
-        [self.topicFrameArray addObject:topicFrameItem];
-    }
-    [self.tableView reloadData];
-}
-
 - (void)loadAllDataFromLocal {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 先从本地plist里尝试加载数据(展示最后一次刷新的数据)
@@ -220,6 +121,115 @@ static NSString * const cellID = @"cellID";
             [self.tableView reloadData];
         });
     });
+}
+
+#pragma mark - 网络请求数据
+/**
+ 下拉刷新数据
+ */
+- (void)loadNewData {
+    // 1.取消之前的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+    // 2.拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @(10);
+    if (self.maxtime.length > 0) {
+        parameters[@"maxtime"] = self.maxtime;
+    }
+    
+    // 3.发送请求
+    [self.manager GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+        // 存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        
+        // 字典数组 -> 模型数据
+        NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        // 转换模型(提前计算frame)
+        self.topicFrameArray = [self topicFrameArrWithTopic:tempArray];
+        
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 结束刷新
+        [self.tableView.mj_header endRefreshing];
+        
+        // 缓存plist
+        @synchronized (self) {
+            [responseObject writeToFile:WSEssencePlistPath atomically:YES];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
+        
+        // 结束刷新
+        [self.tableView.mj_header endRefreshing];
+    }];
+}
+
+/**
+ 上拉加载旧数据
+ */
+- (void)loadOldData {
+    // 1.取消之前的请求
+    [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+    // 2.拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"c"] = @"data";
+    parameters[@"type"] = @(10);
+    parameters[@"maxtime"] = self.maxtime;
+    
+    // 3.发送请求
+    [self.manager GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+        // 存储maxtime
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        
+        // 字典数组 -> 模型数据
+        NSArray *tempArray = [WSTopicItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        // 转换模型(提前计算frame)
+        NSMutableArray *array = [self topicFrameArrWithTopic:tempArray];
+        [self.topicFrameArray addObjectsFromArray:array];
+        
+        // 刷新表格
+        [self.tableView reloadData];
+        
+        // 结束刷新
+        [self.tableView.mj_footer endRefreshing];
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error.code != NSURLErrorCancelled) { // 并非是取消任务导致的error，其他网络问题导致的error
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
+        
+        // 结束刷新
+        [self.tableView.mj_footer endRefreshing];
+    }];
+}
+
+
+/**
+  模型转换成topicFrameItem 的数组
+
+ @param topicItemArray 传入topicItem模型的数组
+ */
+- (NSMutableArray *)topicFrameArrWithTopic:(NSArray *)topicItemArray {
+    NSMutableArray *frameArray = [NSMutableArray array];
+    for (WSTopicItem *topicItem in topicItemArray) {
+        WSTopicFrameItem *topicFrameItem = [[WSTopicFrameItem alloc] init];
+        topicFrameItem.topicItem = topicItem;
+        [frameArray addObject:topicFrameItem];
+    }
+    return frameArray;
 }
 
 #pragma mark - Table view data source
