@@ -89,7 +89,9 @@
             CGFloat imageH = imageW * topicItem.height / topicItem.width;
             
             // 开启上下文
-            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
+//            UIGraphicsBeginImageContextWithOptions(topicItem.middleFrame.size, YES, 0.0);
+            UIGraphicsBeginImageContext(topicItem.middleFrame.size);
+//            UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
             // 绘制图片到上下文中
             [image drawInRect:CGRectMake(0, 0, imageW, imageH)];
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
@@ -109,8 +111,6 @@
         self.imageView.contentMode = UIViewContentModeScaleToFill;
         self.imageView.clipsToBounds = NO;
     }
-
-    
 }
 
 
