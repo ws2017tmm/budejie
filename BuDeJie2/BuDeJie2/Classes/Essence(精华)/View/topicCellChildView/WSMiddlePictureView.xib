@@ -22,13 +22,6 @@
                         <constraint firstAttribute="height" constant="50" id="8yv-hW-ju6"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vr5-4o-1PU">
-                    <rect key="frame" x="0.0" y="0.0" width="337" height="209"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="D70-Ps-5Cg">
-                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep5-UN-TB0" userLabel="progress" customClass="DALabeledCircularProgressView">
                     <rect key="frame" x="128.5" y="64.5" width="80" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,6 +30,13 @@
                         <constraint firstAttribute="height" constant="80" id="bQk-pQ-hx5"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vr5-4o-1PU">
+                    <rect key="frame" x="0.0" y="0.0" width="337" height="209"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="D70-Ps-5Cg">
+                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                </imageView>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ech-YL-DCp">
                     <rect key="frame" x="0.0" y="169" width="337" height="40"/>
                     <constraints>

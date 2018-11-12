@@ -23,36 +23,40 @@
  */
 - (void)ws_setOriginImage:(NSString *)originImageURL thumbnailImage:(NSString *)thumbnailImageURL placeholder:(nullable UIImage *)placeholder progress:(nullable SDImageLoaderProgressBlock)progressBlock completed:(nullable SDExternalCompletionBlock)completedBlock {
     
-    // 根据网络状态来加载图片
-    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-    
-    // 获得原图（SDWebImage的图片缓存是用图片的url字符串作为key）
-    UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL];
-    
-    if (originImage) { // 原图被下载过
-        [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
-    } else { // 原图没有被下载过
-        // 判断网络状态
-        if (mgr.isReachableViaWiFi) { // 当前是WiFi
-            [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder options:SDWebImageRetryFailed progress:progressBlock completed:completedBlock];
-        } else if (mgr.isReachableViaWWAN) { // 手机自带网络
-            // 3G\4G网络的时候是否要下载原图(假设需要下载)
-            BOOL downloadOriginImageWhen3GOr4G = YES;
-            if (downloadOriginImageWhen3GOr4G) {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        // 根据网络状态来加载图片
+        AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
+        
+        // 获得原图（SDWebImage的图片缓存是用图片的url字符串作为key）
+        UIImage *originImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:originImageURL];
+        
+        if (originImage) { // 原图被下载过
+            [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder completed:completedBlock];
+        } else { // 原图没有被下载过
+            // 判断网络状态
+            if (mgr.isReachableViaWiFi) { // 当前是WiFi
                 [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder options:SDWebImageRetryFailed progress:progressBlock completed:completedBlock];
-            } else {
-                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder options:SDWebImageRetryFailed progress:progressBlock completed:completedBlock];
-            }
-        } else { // 没有可用的网络
-            UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
-            if (thumbnailImage) { // 缩略图已经被下载过
-                [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
-            } else { // 没有下载过任何图片
-                // 占位图片;
-                [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
+            } else if (mgr.isReachableViaWWAN) { // 手机自带网络
+                // 3G\4G网络的时候是否要下载原图(假设需要下载)
+                BOOL downloadOriginImageWhen3GOr4G = YES;
+                if (downloadOriginImageWhen3GOr4G) {
+                    [self sd_setImageWithURL:[NSURL URLWithString:originImageURL] placeholderImage:placeholder options:SDWebImageRetryFailed progress:progressBlock completed:completedBlock];
+                } else {
+                    [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder options:SDWebImageRetryFailed progress:progressBlock completed:completedBlock];
+                }
+            } else { // 没有可用的网络
+                UIImage *thumbnailImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:thumbnailImageURL];
+                if (thumbnailImage) { // 缩略图已经被下载过
+                    [self sd_setImageWithURL:[NSURL URLWithString:thumbnailImageURL] placeholderImage:placeholder completed:completedBlock];
+                } else { // 没有下载过任何图片
+                    // 占位图片;
+                    [self sd_setImageWithURL:nil placeholderImage:placeholder completed:completedBlock];
+                }
             }
         }
-    }
+        
+    });
 }
 
 /**

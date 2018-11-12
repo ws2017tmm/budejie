@@ -100,7 +100,7 @@ static NSString * const cellID = @"cellID";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(1);
+    parameters[@"type"] = @(10);
     
     [mgr GET:WSCommonURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
         
@@ -139,7 +139,7 @@ static NSString * const cellID = @"cellID";
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
     parameters[@"c"] = @"data";
-    parameters[@"type"] = @(1);
+    parameters[@"type"] = @(10);
     parameters[@"maxtime"] = self.maxtime;
     
     // 3.发送请求
@@ -240,8 +240,8 @@ static NSString * const cellID = @"cellID";
 
 #pragma mark - Table view delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static int i = 0;
-    NSLog(@"----%d",i);
+//    static int i = 0;
+//    NSLog(@"----%d",i++);
     WSTopicFrameItem *topicFrameItem = self.topicFrameArray[indexPath.row];
     return topicFrameItem.cellHeight;
 }
