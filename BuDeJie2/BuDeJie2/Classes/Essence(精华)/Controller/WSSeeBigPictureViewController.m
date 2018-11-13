@@ -35,6 +35,7 @@
     
 }
 
+// pod 'FLAnimatedImage'
 - (void)setupUI {
     [self.scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(back)]];
     
@@ -42,10 +43,12 @@
     
     // 添加 imageView
     UIImageView *imageView = [[UIImageView alloc] init];
+//    imageView.ws_width = WSScreenW;
+//    imageView.ws_height = WSScreenW * _topicItem.height / _topicItem.width;
     [self.scrollView addSubview:imageView];
     self.imageView = imageView;
     
-    [imageView sd_setImageWithURL:[NSURL URLWithString:self.topicItem.image1] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [imageView sd_setImageWithURL:[NSURL URLWithString:self.topicItem.image1] placeholderImage:[UIImage imageNamed:@"login_register_background"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         if (!image) return;
         self.saveButton.enabled = YES;
         // 处理超长图片的大小
@@ -54,7 +57,6 @@
             CGFloat imageH = WSScreenW / self.topicItem.width * self.topicItem.height;
             // 开启上下文
             UIGraphicsBeginImageContext(CGSizeMake(imageW, imageH));
-
             // 绘制图片到上下文中
             [image drawInRect:CGRectMake(0, 0, imageW, imageH)];
             self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
